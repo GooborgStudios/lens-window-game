@@ -9,6 +9,8 @@ Photos by nxplv
 Written in LÖVE2D
 Moonshine Shaders by vrld
 
+macOS/Linux Porting & Testing by Gooborg Studios
+
 Fonts:
 ChevyRay - SoftSquare, Vector Mono
 Roboto - Christian Robertson
