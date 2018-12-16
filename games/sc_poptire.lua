@@ -37,7 +37,7 @@ function app:onStart(window,args)
         if self.actor.popTire.cooldown > 0 then
             text = self.actor.popTire.cooldown
         end
-        love.graphics.print( math.ceil(text),x-6,math.floor(y-love.graphics.getFont():getHeight()/2))
+        love.graphics.printf( math.ceil(text),x-12,math.floor(y-love.graphics.getFont():getHeight()/2), 24, "center")
     end
 
     ball:addComponent(SimplePhysics).onHitEdge = function(self,left,right,top,bottom)
