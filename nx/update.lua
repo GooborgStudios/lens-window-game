@@ -44,10 +44,13 @@ end
 function love.draw()
     local effect = moonshine(moonshine.effects.scanlines)
     effect.chain(moonshine.effects.crt)
+    effect.chain(moonshine.effects.chromasep)
 
     effect.scanlines.opacity = 0.1
     effect.scanlines.frequency = 400
     effect.crt = 0.005
+    effect.chromasep.angle = 0
+    effect.chromasep.radius = 2
 
 
     if not State:get('shaderEnabled') then
@@ -57,9 +60,13 @@ function love.draw()
     if not State:get('CRTshaderEnabled') then
         effect.disable("crt")
     end
+
+    if not State:get('ChromashaderEnabled') then
+        effect.disable("chromasep")
+    end
     
 
-    if State:get('shaderEnabled') or State:get('CRTshaderEnabled') then
+    if State:get('shaderEnabled') or State:get('CRTshaderEnabled') or State:get('ChromashaderEnabled') then
         effect( _mainDraw )
     else
         _mainDraw()

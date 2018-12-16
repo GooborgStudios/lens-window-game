@@ -8,7 +8,7 @@ local State = require('system/state')
 local UI = require('system/ui')
 local LoginScreen = require('system/loginscreen')
 
-local app = AppTemplate.new('Settings',240,280)
+local app = AppTemplate.new('Settings',240,300)
 app.icon = 'settings'
 app.iconName = 'Settings'
 app.enabledControlButtons = {true,false,true}
@@ -47,7 +47,8 @@ function app:onStart(window,args)
         end),
         UI.checkbox.new('Windowed',leftSide,topSide + 128,'windowed',true),
         UI.checkbox.new('Scanline shader',leftSide,topSide + 128 + 24,'shaderEnabled',true),
-        UI.checkbox.new('CRT shader',leftSide,topSide + 128 + 24*2,'CRTshaderEnabled',true)
+        UI.checkbox.new('CRT shader',leftSide,topSide + 128 + 24*2,'CRTshaderEnabled',true),
+        UI.checkbox.new('Chroma shader',leftSide,topSide + 128 + 24*3,'ChromashaderEnabled',true)
     }
 end
 
